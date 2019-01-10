@@ -1,0 +1,72 @@
+.pinterest-grid {
+  padding: 20px 10px;
+  margin: 0 auto;
+  -moz-column-width: 220px;
+	-webkit-column-width: 220px;
+	column-width: 220px;
+	-moz-column-count: 6;
+	-webkit-column-count: 6;
+	column-count: 6;
+	-moz-column-gap: 10px;
+	-webkit-column-gap: 10px;
+	column-gap: 10px;
+}
+
+.pin {
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+  padding: 5px;
+  border-radius: 5px;
+  page-break-inside: avoid;
+}
+
+.pin img {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.overlay-link {
+  position: absolute;
+  margin: 10px;
+  padding: 7px;
+  background: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #0287c8;
+  text-decoration: none;
+  display: none;
+}
+
+.pin:hover .overlay {
+  opacity: 1;
+}
+
+.pin:hover .overlay-link {
+  display: inline;
+}
+
+/* smaller screens */
+@media screen and (max-width: 750px) {
+  .pinterest-grid {
+    padding: 10px 5px;
+  }
+
+  .pin {
+    margin: 0;
+  }
+}

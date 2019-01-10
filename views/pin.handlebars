@@ -1,0 +1,99 @@
+{{#section 'title'}}
+Pinterest Clone
+{{/section}}
+
+{{#section 'styles'}}
+<link rel="stylesheet" href="/css/pin.css">
+{{/section}}
+
+{{#if loggedUser}}
+<!-- Edit Pin Modal -->
+<div class="modal" id="edit-pin-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Edit Pin</h2>
+      <span class="modal-close" id="close-edit-pin">&times;</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <form class="form" id="edit-pin-form" action="/pin/edit/{{pin._id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="hidden" name="pinAuthorID" value="{{pin.author.id}}">
+        <input type="hidden" name="loggedUserID" value="{{loggedUser.id}}">
+
+        <label for="body">edit pin description</label>
+        <textarea name="body" rows="8" cols="80">{{pin.body}}</textarea>
+        <br>
+        <label for="allowComments">allow comments on this pin?</label>
+        <input type="checkbox" name="allowComments" checked>
+        <br>
+        <label for="status">pin visibility status</label>
+        <select name="status">
+          <option value="private">Private</option>
+          <option value="public" selected>Public</option>
+        </select>
+        <hr>
+        <button type="submit" name="submit">Update</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Pin Modal -->
+<div class="modal" id="delete-pin-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Delete Pin</h2>
+      <span class="modal-close" id="close-delete-pin">&times;</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <form class="form" id="delete-pin-form" action="/pin/delete/{{pin._id}}?_method=DELETE" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="pinAuthorID" value="{{pin.author.id}}">
+        <input type="hidden" name="loggedUserID" value="{{loggedUser.id}}">
+
+        <button type="submit" name="submit">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+<div class="single-pin">
+  <img class="single-pin-image" src="/images/uploads/{{pin.image}}" alt="pin">
+  <div class="single-pin-info">
+    <a href="/{{pin.author.username}}"><img src="{{pin.author.image}}" alt="author"></a>
+    <div class="author-info">
+      <a href="/{{pin.author.username}}">{{pin.author.username}}</a>
+      <span>{{formatDate pin.date}}</span>
+    </div>
+    {{{editOrDelete pin.author.id loggedUser.id}}}
+  </div>
+
+  <div class="pin-body">
+    <p>{{pin.body}}</p>
+  </div>
+
+  {{#if pin.allowComments}}
+    {{#if loggedUser}}
+    <form id="comment-form" class="form" action="/pin/{{pin.id}}/comment/add" method="POST">
+      <textarea name="commentBody" placeholder="Write a comment"></textarea>
+      <button type="submit">Add Comment</button>
+    </form>
+    {{else}}
+      <div id="open-login">Log in to write a comment</div>
+    {{/if}}
+    {{#if pin.comments}}
+      <div class="comment-section">
+      {{#each pin.comments}}
+        <div class="comment">
+          <img src="{{this.commentAuthor.image}}" alt="">
+          <p>{{this.commentBody}}</p>
+          {{{deleteComment this.commentAuthor.id ../loggedUser.id ../pin.id this.id}}}
+        </div>
+      {{/each}}
+      </div>
+    {{/if}}
+  {{/if}}
+</div>

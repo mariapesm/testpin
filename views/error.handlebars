@@ -1,0 +1,31 @@
+{{#section 'title'}}
+Error :(
+{{/section}}
+
+{{#section 'styles'}}
+<style>
+  .sad-face {
+    display: block;
+    margin: 100px auto 50px;
+    width: 500px;
+  }
+  .error-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #670000;
+    text-align:center;
+  }
+  @media screen and (max-width: 650px) {
+    .sad-face {
+      width: 250px;
+      margin: 70px auto 30px;
+    }
+    .error-text {
+      font-size: 26px;
+    }
+  }
+</style>
+{{/section}}
+
+<img class="sad-face" src="/images/sad_face.png" alt="error">
+<h1 class="error-text">{{title}}</h1>

@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js" 
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,9 @@
     "url": "https://github.com/SavaVuckovic/Pinterest-Clone/issues"
   },
   "homepage": "https://github.com/SavaVuckovic/Pinterest-Clone#readme",
+  "engines": {
+    "node": "^8.0.0"
+  },
   "dependencies": {
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.1",

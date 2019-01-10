@@ -1,0 +1,267 @@
+body {
+  background: #eee;
+}
+
+.single-pin {
+  padding: 25px;
+  max-width: 800px;
+  border-radius: 13px;
+  background: #fff;
+  margin: 20px auto;
+}
+
+.single-pin-image {
+  width: 100%;
+  border-radius: 13px;
+}
+
+.single-pin-info {
+  margin-top: 15px;
+  display: flex;
+}
+
+.single-pin-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.author-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.author-info a {
+  display: inline-block;
+  font-size: 24px;
+  color: #0088c4;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.author-info a:hover {
+  color: #00a2ef;
+}
+
+.edit-delete {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.edit-delete button {
+  padding: 5px;
+  border-radius: 7px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  background: #fff;
+}
+
+#edit-pin-btn {
+  border: 2px solid #0287c8;
+  color: #0287c8;
+}
+
+#edit-pin-btn:hover {
+  background: #0287c8;
+  color: #fff;
+}
+
+#delete-pin-btn {
+  border: 2px solid #700a0a;
+  color: #700a0a;
+  margin-left: 10px;
+}
+
+#delete-pin-btn:hover {
+  background: #700a0a;
+  color: #fff;
+}
+
+.pin-body {
+  margin: 10px 0 20px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  background: #eee;
+}
+
+/* comments */
+#open-login {
+  color: #0287c8;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0 10px;
+}
+
+#comment-form textarea {
+  background: #eee;
+  border: none;
+  border-radius: 13px;
+  font-size: 15px;
+  max-width: 100%;
+  min-width: 100%;
+  padding: 10px;
+}
+
+#comment-form button {
+  font-size: 15px;
+  padding: 5px;
+  width: auto;
+}
+
+.comment-section {
+  padding: 10px 0;
+}
+
+.comment {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.comment img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.comment p {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+#delete-comment-form {
+  margin-left: auto;
+}
+
+#delete-comment-form button {
+  border: 1.5px solid #700a0a;
+  color: #700a0a;
+  margin-left: 10px;
+  border-radius: 7px;
+  background: #fff;
+  font-weight: bold;
+}
+
+#delete-comment-form button:hover {
+  background: #700a0a;
+  color: #fff;
+}
+
+/* edit and delete modals and inner forms */
+.modal-header,
+.modal hr {
+  margin: 0;
+}
+
+#edit-pin-form {
+  padding: 5px;
+}
+
+#edit-pin-form label {
+  display: inline-block;
+  margin: 15px 0 5px;
+  color: #0287c8;
+  font-weight: bold;
+}
+
+#edit-pin-form label:first-of-type {
+  margin: 0;
+}
+
+#edit-pin-form textarea {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+#edit-pin-form button {
+  margin-top: 10px;
+  width: auto;
+  font-size: 14px;
+  padding: 7px;
+}
+
+#delete-pin-form button {
+  border-color: #700a0a;
+  color: #700a0a;
+  width: auto;
+  font-size: 14px;
+  padding: 7px;
+}
+
+#delete-pin-form button:hover {
+  background: #700a0a;
+  color: #fff;
+}
+
+/* smaller screens */
+@media screen and (max-width: 800px) {
+  .single-pin {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .single-pin-info img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .author-info a {
+    font-size: 20px;
+  }
+
+  .author-info span {
+    font-size: 14px;
+    color: #555;
+  }
+
+  .edit-delete button {
+    font-size: 14px;
+    padding: 3px;
+    font-weight: normal;
+  }
+
+  #edit-pin-btn {
+    border: 1px solid #0287c8;
+  }
+
+  #delete-pin-btn {
+    border: 1px solid #700a0a;
+    margin-left: 7px;
+  }
+
+  .pin-body {
+    font-size: 14px;
+  }
+
+  #comment-form textarea {
+    height: 100px;
+    font-size: 13px;
+    padding: 7px;
+  }
+
+  #comment-form button {
+    border-width: thin;
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .comment {
+    padding: 5px;
+  }
+
+  .comment img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .comment p {
+    font-size: 13px;
+    margin-left: 6px;
+  }
+}

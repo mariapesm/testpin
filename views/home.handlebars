@@ -1,0 +1,57 @@
+{{#section 'title'}}
+Pinterest Clone
+{{/section}}
+
+{{#section 'styles'}}
+<link rel="stylesheet" href="/css/pinterest-grid.css">
+<link rel="stylesheet" href="/css/home.css">
+{{/section}}
+
+
+<div class="pinterest-grid">
+  <div class="pin new-pin">
+    <h1>&plus;</h1>
+    <h2>Create Pin</h2>
+  </div>
+  {{#each pins}}
+  <div class="pin">
+    <img src="/images/uploads/{{this.image}}" alt="">
+    <div class="overlay">
+      <a href="/pin/{{this._id}}" class="overlay-link">More</a>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+<!-- New Pin Modal -->
+<div class="modal" id="new-pin-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Create New Pin</h2>
+      <span class="modal-close" id="close-new-pin">&times;</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <form class="new-pin-form" action="/pin/add" method="post" enctype="multipart/form-data">
+        <label for="image">upload pin image</label>
+        <br>
+        <input id="file-upload" type="file" name="image">
+        <br>
+        <label for="body">say something about this pin</label>
+        <textarea name="body" rows="8" cols="80"></textarea>
+        <label for="allowComments">allow comments on this pin?</label>
+        <input type="checkbox" name="allowComments" checked>
+        <br>
+        <label for="status">pin visibility status</label>
+        <select name="status">
+          <option value="private">Private</option>
+          <option value="public" selected>Public</option>
+        </select>
+        <button type="submit" name="submit">Add</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modals Script -->
+<script src="/js/home_modals.js"></script>

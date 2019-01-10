@@ -1,0 +1,98 @@
+.user-field {
+  background: #199be4;
+  padding-top: 20px;
+  display: flex;
+}
+
+.user-field-left {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0 10px;
+}
+
+#user-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+}
+
+.user-field-right {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.user-info h1 {
+  font-size: 26px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.joined {
+  color: #ddd;
+}
+
+.user-field-right ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.user-field-right ul li {
+  display: inline-block;
+  padding: 3px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  margin: 0 20px 0 10px;
+}
+
+.user-field-right ul li:hover {
+  border-bottom: 2px solid #fff;
+}
+
+@media screen and (max-width: 500px) {
+  #user-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .user-field-right {
+    flex: 2.5;
+  }
+
+  .user-info h1 {
+    font-size: 20px;
+  }
+
+  .joined {
+    font-size: 14px;
+  }
+
+  .user-field-right ul li {
+    font-size: 16px;
+    margin: 0 10px 0 5px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .user-field {
+    display: block;
+  }
+
+  .user-field-right {
+    padding: 0 10px;
+    align-items: center;
+  }
+
+  .user-info {
+    text-align: center;
+  }
+
+  .joined {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,119 @@
+.new-pin {
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 10px 10px;
+  min-height: 200px;
+  background: #ddd;
+  border: 5px solid #fff;
+  border-radius: 15px;
+}
+
+.new-pin h1 {
+  font-size: 100px;
+}
+
+.new-pin h2 {
+  font-size: 22px;
+}
+
+.new-pin h1,
+.new-pin h2 {
+  color: #0287c8;
+}
+
+.new-pin-form label {
+  display: inline-block;
+  margin: 15px 0 5px;
+  color: #0287c8;
+  font-weight: bold;
+}
+
+.new-pin-form label:first-of-type {
+  margin: 0;
+}
+
+.new-pin-form textarea {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.new-pin-form input,
+.new-pin-form select {
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #cdcdcd;
+}
+
+.new-pin-form button {
+  display: block;
+  margin: 15px auto 0;
+  padding: 7px;
+  border: 2px solid #0287c8;
+  border-radius: 13px;
+  width: 100px;
+  color: #0287c8;
+  background: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.new-pin-form button:hover {
+  color: #fff;
+  background: #0287c8;
+}
+
+#file-upload {
+  border: none;
+  max-width: 200px;
+}
+
+@media screen and (max-width: 480px) {
+  .new-pin {
+    min-height: 100px;
+    padding: 10px;
+  }
+
+  .new-pin h1 {
+    font-size: 70px;
+  }
+
+  .new-pin h2 {
+    font-size: 18px;
+  }
+
+  .new-pin-form input{
+    padding: 5px;
+  }
+
+  .new-pin-form button {
+    margin: 10px auto 0;
+    padding: 4px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .new-pin-form label {
+    font-size: 14px;
+    margin: 8px 0 5px;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .new-pin {
+    min-height: 90px;
+    padding: 5px;
+  }
+
+  .new-pin h1 {
+    font-size: 60px;
+  }
+
+  .new-pin h2 {
+    font-size: 16px;
+  }
+
+  #file-upload {
+    max-width: 190px;
+    font-size: 12px;
+  }
+}

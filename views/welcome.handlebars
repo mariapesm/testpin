@@ -1,0 +1,18 @@
+{{#section 'title'}}
+Pinterest Clone
+{{/section}}
+
+{{#section 'styles'}}
+<link rel="stylesheet" href="/css/pinterest-grid.css">
+{{/section}}
+
+<div class="pinterest-grid">
+  {{#each pins}}
+  <div class="pin">
+    <img src="/images/uploads/{{this.image}}" alt="">
+    <div class="overlay">
+      <a href="/pin/{{this._id}}" class="overlay-link">More</a>
+    </div>
+  </div>
+  {{/each}}
+</div>
